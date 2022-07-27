@@ -22,6 +22,17 @@
     }
   {%- endstyle -%}
 
+  {%- capture flickity_options -%}
+  {
+    "prevNextButtons": true,
+    "pageDots": true,
+    "contain": true,
+    "cellAlign": "left",
+    "groupCells": false,
+    "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+  }
+  {%- endcapture -%}
+
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -33,6 +44,7 @@
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
+      {% comment %}
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
@@ -197,7 +209,63 @@
           </slider-component>
         {%- endif -%}
       </media-gallery>
+      {% endcomment %}
+
+      {% comment %} Custom Product Slider {% endcomment %}
+
+      <div class="featured-collection-slider page-width">
+        <div class="products-carousel js-flickity" data-flickity='{{ flickity_options }}'>
+          {% for media in product.media %}
+            <div class="carousel-cell">
+              <img class="product-image-custom" src="{{ media | image_url }}" width="400" height="500" loading="lazy">
+            </div>
+          {% endfor %}
+        </div>
+      
+      </div>
     </div>
+      <style>
+        .featured-collection-slider{
+          padding-left: 55px;
+          padding-right: 55px;
+          max-width: 1200px;
+          margin: 0 auto;
+          margin-bottom:30px;
+        }
+
+        .featured-collection-slider .carousel-cell{
+          width:100%;
+          display: block;
+        }
+
+        .flickity-button:disabled{
+          pointer-events: all!important;
+        }
+
+        .product-image-custom{
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+
+        @media screen and (max-width: 920px){
+          .featured-collection-slider{
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          .featured-collection-slider .carousel-cell{
+            width:50%;
+          }
+        }
+
+        @media screen and (max-width: 767px){
+          .featured-collection-slider .carousel-cell{
+            width:100%;
+          }
+        }
+        </style>
+      {% comment %} End of Custom Product Slider {% endcomment %}
+
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
