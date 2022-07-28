@@ -535,6 +535,21 @@
                 {%- endform -%}
               </product-form>
 
+              {% comment %} Custom Product Characteristics {% endcomment %} 
+
+              <div class="product-characteristics">
+                <h2><strong>Characteristics</strong></h2>
+                {% for characteristic in product.metafields.custom %}
+                  {% if characteristic.last.type == 'single_line_text_field' %}
+                  <div class="product-characteristic">
+                    <h3>{{ characteristic | first | capitalize }} : {{ characteristic | last }} </h3>
+                  </div>
+                 {% endif %}
+                {% endfor %}
+              </div>
+            
+              {% comment %} End Custom Product Characteristics {% endcomment %} 
+
               {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
               {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
