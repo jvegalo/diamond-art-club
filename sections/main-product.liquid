@@ -291,6 +291,22 @@
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
             </div>
+
+            {% comment %} Custom Product Tags {% endcomment %}
+
+            <style>
+              .product-tags{
+                margin-bottom: 20px;
+              }
+            </style>
+            <ul class="product-tags">
+            {%- for tag in product.tags limit:3 -%}
+              <li><a href="/collections/all/{{ tag | handleize }}">{{ tag }}</a></li>
+            {% endfor %}
+            </ul>
+
+            {% comment %} End Custom Product Tags {% endcomment %}
+
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
               <div class="product__tax caption rte">
                 {%- if shop.taxes_included -%}
