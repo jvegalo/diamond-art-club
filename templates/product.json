@@ -96,7 +96,7 @@
           "settings": {
             "heading": "Application Test",
             "icon": "check_mark",
-            "content": "<p><strong>Product Description<\/strong><\/p><p>{{ product.metafields.custom.product_description | metafield_tag }}<\/p><p><\/p><p>All kits come equipped with everything you need<\/p><p><\/p>",
+            "content": "<p><strong>Product Description<\/strong><\/p><p>{{ product.metafields.custom.product_description | metafield_tag }}<\/p><p><\/p><p><strong>All kits come equipped with everything you need<\/strong><\/p><p>{{ product.metafields.custom.equipment | metafield_tag }}<\/p>",
             "page": ""
           }
         }
