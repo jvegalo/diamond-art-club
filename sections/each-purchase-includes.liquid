@@ -1,0 +1,173 @@
+<h2 class="purchase-title">Each Purchase Includes</h2>
+<div class="wrapper fit">
+      {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'block_01' %}
+        <div class="blocks-iconbox">
+            <svg width="28" height="28" class="svg-purchase">       
+                 <image xlink:href="https://cdn.shopify.com/s/files/1/0656/6238/6432/files/purchase1.svg?v=1659118173"  width="28" height="28"/>    
+            </svg>
+            <h4 class="purchase-title-box">{{ block.settings.text_title_01 }}</h4>
+        </div>
+        {% when 'block_02' %}
+        <div class="blocks-iconbox">
+            <svg width="28" height="28" class="svg-purchase" >       
+                 <image xlink:href="https://cdn.shopify.com/s/files/1/0656/6238/6432/files/purchase2.svg?v=1659120615"  width="28" height="28"/>    
+            </svg>
+            <h4 class="purchase-title-box">{{ block.settings.text_title_02 }}</h4>
+        </div>
+        {% when 'block_03' %}
+        <div class="blocks-iconbox">
+            <svg width="28" height="28" class="svg-purchase">       
+                <image xlink:href="https://cdn.shopify.com/s/files/1/0656/6238/6432/files/purchase3.svg?v=1659120616"  width="28" height="28"/>    
+            </svg>
+            <h4 class="purchase-title-box">{{ block.settings.text_title_03 }}</h4>
+        </div>
+        {% when 'block_04' %}
+        <div class="blocks-iconbox">
+            <svg width="28" height="28" class="svg-purchase">       
+                <image xlink:href="https://cdn.shopify.com/s/files/1/0656/6238/6432/files/purchase4.svg?v=1659120616"  width="28" height="28"/>    
+            </svg>
+            <h4 class="purchase-title-box">{{ block.settings.text_title_04 }}</h4>
+            </div>
+      {% endcase %}
+      {% endfor %}
+</div>
+
+<style>
+    .wrapper {
+        display: grid;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .fit {
+        grid-template-columns: repeat(4,1fr);
+        gap: 28px;
+    }
+
+    .blocks-iconbox {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .purchase-title-box{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: .175em;
+        text-transform: uppercase;
+    }
+
+    .purchase-title{
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .svg-purchase{
+        min-height: 28px;
+        min-width: 28px;
+    }
+
+    @media only screen and (max-width: 600px) and (min-width: 200px)  {
+    .wrapper {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .blocks-iconbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .purchase-title-box{
+        text-align: center;
+    }
+    
+</style>
+
+{% schema %}
+{
+  "name": "Each Purchase Includes",
+  "max_blocks": 5,
+  "blocks": [
+      {
+      "type" : "block_01",
+      "name" : "Icon 01",
+      "settings" : [
+        {
+            "type":"text",
+            "id": "text_title_01",
+                "label": "Text",
+                "default": "30-Day Money Back Guarantee"
+        }
+      ]
+    },
+    {
+        "type": "block_02",
+        "name": "Icon 02",
+        "settings": [
+        {
+            "type": "text",
+            "id": "text_title_02",
+            "label": "Text",
+            "default": "10% cash-back rewards with every order"
+        }
+        ]
+    },
+    {
+        "type": "block_03",
+        "name": "Icon 03",
+        "settings": [
+        {
+            "type": "text",
+            "id": "text_title_03",
+            "label": "Text",
+            "default": "Lifetime Warranty"
+        }
+        ]
+    },
+    {
+        "type": "block_04",
+        "name": "Icon 04",
+        "settings": [
+        {
+            "type": "text",
+            "id": "text_title_04",
+            "label": "Text",
+            "default": "Free Diamond Spill insurance"
+        }
+        ]
+    }
+  ],	
+  "presets": [
+      {
+      "name": "Each Purchase Includes",
+      "category": "Custom content",
+      "blocks": [
+        {
+            "type": "block_01"
+        },
+        {
+            "type": "block_02"
+        },
+        {
+            "type": "block_03"
+        },
+        {
+            "type": "block_04"
+        }
+      ]
+  }
+]
+}
+{% endschema %}
