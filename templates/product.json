@@ -128,84 +128,6 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -222,12 +144,48 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "1659131651751da099": {
+      "type": "each-purchase-includes",
+      "blocks": {
+        "16591316514def7e6d-0": {
+          "type": "block_01",
+          "settings": {
+            "text_title_01": "30-Day Money Back Guarantee"
+          }
+        },
+        "16591316514def7e6d-1": {
+          "type": "block_02",
+          "settings": {
+            "text_title_02": "10% cash-back rewards with every order"
+          }
+        },
+        "16591316514def7e6d-2": {
+          "type": "block_03",
+          "settings": {
+            "text_title_03": "Lifetime Warranty"
+          }
+        },
+        "16591316514def7e6d-3": {
+          "type": "block_04",
+          "settings": {
+            "text_title_04": "Free Diamond Spill insurance"
+          }
+        }
+      },
+      "block_order": [
+        "16591316514def7e6d-0",
+        "16591316514def7e6d-1",
+        "16591316514def7e6d-2",
+        "16591316514def7e6d-3"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
-    "product-recommendations"
+    "product-recommendations",
+    "1659131651751da099"
   ]
 }
