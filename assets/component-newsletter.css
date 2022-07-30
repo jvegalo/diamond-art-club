@@ -19,8 +19,13 @@
   width: 100%;
 }
 
+.newsletter-form__field-wrapper  .field__label{
+  color: white;
+}
+
 .newsletter-form__field-wrapper .field__input {
   padding-right: 5rem;
+  background-color: transparent;
 }
 
 .newsletter-form__field-wrapper .field {
