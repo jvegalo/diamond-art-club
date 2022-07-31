@@ -2,7 +2,7 @@ if (!customElements.get('product-form')) {
   customElements.define('product-form', class ProductForm extends HTMLElement {
     constructor() {
       super();
-
+      
       this.form = this.querySelector('form');
       this.form.querySelector('[name=id]').disabled = false;
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
@@ -26,11 +26,14 @@ if (!customElements.get('product-form')) {
       delete config.headers['Content-Type'];
 
       const formData = new FormData(this.form);
+      
       if (this.cart) {
         formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
+
+       
       config.body = formData;
 
       fetch(`${routes.cart_add_url}`, config)
@@ -50,7 +53,6 @@ if (!customElements.get('product-form')) {
             window.location = window.routes.cart_url;
             return;
           }
-
           this.error = false;
           const quickAddModal = this.closest('quick-add-modal');
           if (quickAddModal) {
@@ -61,6 +63,8 @@ if (!customElements.get('product-form')) {
           } else {
             this.cart.renderContents(response);
           }
+          formData.append("id", "43055224783104")
+          return fetch(`${routes.cart_add_url}`, config);
         })
         .catch((e) => {
           console.error(e);
