@@ -163,6 +163,7 @@
         ],
         "settings": {
           "color_scheme": "background-1",
+          "footer-logo": "shopify:\/\/shop_images\/logo-white-new.png",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
