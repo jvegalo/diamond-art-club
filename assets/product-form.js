@@ -26,6 +26,11 @@ if (!customElements.get('product-form')) {
       delete config.headers['Content-Type'];
 
       const formData = new FormData(this.form);
+      for (var pair of formData.entries()) {
+        if(pair[0] == "id"){
+          alert(pair[0]+ ', ' + pair[1]);
+        }
+      }
       
       if (this.cart) {
         formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));
@@ -63,6 +68,9 @@ if (!customElements.get('product-form')) {
           } else {
             this.cart.renderContents(response);
           }
+        
+          
+          /** This was hardcoded **/
           formData.append("id", "43055224783104")
           return fetch(`${routes.cart_add_url}`, config);
         })

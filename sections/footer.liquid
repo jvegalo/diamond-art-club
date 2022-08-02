@@ -123,7 +123,7 @@
         -%}
         {% comment %} Custom Footer Logo {% endcomment %}
         <div class="footer-logo-container">
-        <img class="footer-logo" src="https://cdn.shopify.com/s/files/1/0656/6238/6432/files/logo-white-new.png?v=1659146757" 
+        <img class="footer-logo" src= "{{ section.settings.footer-logo | image_url: width: section.settings.width }}"
           width="270"
           height="29"
           loading="lazy">
@@ -616,6 +616,11 @@
       ],
       "default": "background-1",
       "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "image_picker",
+      "label": "Footer Logo",
+      "id": "footer-logo"
     },
     {
       "type": "header",
