@@ -181,11 +181,78 @@
       ],
       "settings": {
       }
+    },
+    "1659307420b59e377a": {
+      "type": "custom-upsell-product",
+      "blocks": {
+        "1659307420b2e61e33-0": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "1659307420b2e61e33-1": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "1659307420b2e61e33-2": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "1659307420b2e61e33-3": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "1659307420b2e61e33-4": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "1659307420b2e61e33-6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "1659307420b2e61e33-7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "1659307420b2e61e33-0",
+        "1659307420b2e61e33-1",
+        "1659307420b2e61e33-2",
+        "1659307420b2e61e33-3",
+        "1659307420b2e61e33-4",
+        "1659307420b2e61e33-6",
+        "1659307420b2e61e33-7"
+      ],
+      "settings": {
+        "product": "dragon-mask",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "1659131651751da099"
+    "1659131651751da099",
+    "1659307420b59e377a"
   ]
 }
